@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Registration</h2>
+        <form name="myform" action="http://localhost:8080/myApp/Insertion1" method="post"
+            onSubmit="return validation()">
+            <label for="name">Name : </label>
+            <input type="text" id="name" name="name" minlength="6" required><br><br>
+            <label for="pass">Password : </label>
+            <input type="password" id="pass" name="password" minlength="6" required><br><br>
+            <label for="email">Email : </label>
+            <input type="text" id="email" name="email" required><br><br>
+            <label for="phoneno">Phone No : </label>
+            <input type="text" id="phoneno" name="phoneno" required><br><br>
+            <label>Sex : </label><br>
+            <input type="radio" id="male" name="sex" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="sex" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="others" name="sex" value="others">
+            <label for="others">Others</label><br><br>
+            <label for="dob">Date of Birth:</label>
+            <select name="day" id="day">
+                <option value="">Day</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="21">21</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <select name="month" id="month">
+                <option value="">Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+            </select>
+            <select name="year" id="year">
+                <option value="">Year</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+            </select><br><br>
+            <label for="languages">Languages known : </label><br>
+            <input type="checkbox" id="lan1" name="lan1" value="English">
+            <label for="lan1">English</label><br>
+            <input type="checkbox" id="lan2" name="lan2" value="Hindi">
+            <label for="lan2">Hindi</label><br>
+            <input type="checkbox" id="lan3" name="lan3" value="Telugu">
+            <label for="lan3">Telugu</label><br>
+            <input type="checkbox" id="lan4" name="lan4" value="Tamil">
+            <label for="lan4">Tamil</label><br><br>
+            <label for="address">Address : </label><br>
+            <textarea id="address" name="address" rows="4" cols="50">
+</textarea><br><br>
+            <input type="submit" value="Submit"> &nbsp&nbsp
+            <input type="submit" value="Reset">
+        </form>
+        <script type="text/javascript">
+            function validation() {
+                let uname = document.myform.name.value;
+                let unamereq = /^[A-Za-z]+$/;
+                if (uname.match(unamereq)) {
+                    let email = document.myform.email.value;
+                    let emailreq = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                    if (email.match(emailreq)) {
+                        let pno = document.myform.phoneno.value;
+                        let pnoreq = /^\d{10}$/;
+                        if (pno.match(pnoreq)) {
+                            return true;
+                        }
+                        else { window.alert("ONLY Numbers"); return false; }
+                    }
+                    else { window.alert("ONLY Email pattern"); return false; }
+                }
+                else { window.alert("ONLY alphabets"); return false; }
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<web-app>
+    <servlet>
+        <servlet-name>Insertion1</servlet-name>
+        <servlet-class>Insertion1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Insertion1</servlet-name>
+        <url-pattern>/Insertion1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Auth</servlet-name>
+        <servlet-class>Auth</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Auth</servlet-name>
+        <url-pattern>/Auth</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Cook</servlet-name>
+        <servlet-class>Cook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cook</servlet-name>
+        <url-pattern>/Cook</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GetCook</servlet-name>
+        <servlet-class>GetCook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCook</servlet-name>
+        <url-pattern>/GetCook</url-pattern>
+    </servlet-mapping>
+</web-app>
